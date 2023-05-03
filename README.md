@@ -18,6 +18,8 @@
 - https://platform.openai.com/docs/guides/speech-to-text
 - 25MB upload limit, can segment though so somewhat non issue
 
+- Remember to setup environment variables and include them on gitignore for hiding API keys
+
 # AIMS
 - WPF app (NOTE:: Code with foreshadowing of allowing webhosting for App to ALSO act as a server)
     - Coded in a way to support "plugins" => custom scrapers for getting video + transcript from other sites
