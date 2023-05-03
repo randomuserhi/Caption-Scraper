@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.4.33403.182
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CaptionScraper", "CaptionScraper\CaptionScraper.csproj", "{2872A984-AB2D-4A02-84F1-B376D0C29D62}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CaptionScraper", "CaptionScraper\CaptionScraper.csproj", "{53433B69-1F58-483D-A314-DA47EAC4A84F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{2872A984-AB2D-4A02-84F1-B376D0C29D62}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{2872A984-AB2D-4A02-84F1-B376D0C29D62}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{2872A984-AB2D-4A02-84F1-B376D0C29D62}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{2872A984-AB2D-4A02-84F1-B376D0C29D62}.Release|Any CPU.Build.0 = Release|Any CPU
+		{53433B69-1F58-483D-A314-DA47EAC4A84F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{53433B69-1F58-483D-A314-DA47EAC4A84F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{53433B69-1F58-483D-A314-DA47EAC4A84F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{53433B69-1F58-483D-A314-DA47EAC4A84F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {1A70CDEE-F424-4365-BD32-8E5DEEA27F14}
+		SolutionGuid = {409DB5F9-56C6-4A5B-9878-0CC0872367C4}
 	EndGlobalSection
 EndGlobal
