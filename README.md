@@ -4,6 +4,8 @@
 - WPF app (NOTE:: Code with foreshadowing of allowing webhosting for App to ALSO act as a server)
     - Coded in a way to support "plugins" => custom scrapers for getting video + transcript from other sites
         - We only supply the "youtube scraper plugin"
+        - Scraper could even just be to call youtube API or something else (in other words should be flexible)
+        - Input -> video url or something idk
 - AnimeDownloader-ish design (in app browser etc...)
 
 # TECHNOLOGIES / TODO
