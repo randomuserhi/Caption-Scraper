@@ -10,6 +10,8 @@
 - WPF customisation (making it not look shit)
 - [CefSharp](https://github.com/chromiumembedded/cef)
     - Look into OffScreen (hide webview) 
+    - https://stackoverflow.com/questions/35471261/using-cefsharp-offscreen-to-retrieve-a-web-page-that-requires-javascript-to-rend
+    - https://github.com/cefsharp/CefSharp/wiki/Quick-Start-For-MS-.Net-5.0-or-greater
 - LLama language model
     - Prompt engineering (supplying title / description etc...)
 - Web Scraping with CefSharp for obtaining transcripts
