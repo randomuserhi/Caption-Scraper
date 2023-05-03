@@ -22,6 +22,8 @@
 - WPF app (NOTE:: Code with foreshadowing of allowing webhosting for App to ALSO act as a server)
     - Coded in a way to support "plugins" => custom scrapers for getting video + transcript from other sites
         - We only supply the "youtube scraper plugin"
+        - Scraper could even just be to call youtube API or something else (in other words should be flexible)
+        - Input -> video url or something idk
 - AnimeDownloader-ish design (in app browser etc...)
 
 # TECHNOLOGIES / TODO
@@ -54,6 +56,7 @@
 - Let users customise "recipe" => this can also be coded as well similar to "plugins"
     - A "recipe" is just the algorithm the program uses to create the summary
         - Allows users to use different summary generation algorithms
+        - E.g => opens browser and puts prompt into bing AI and then returns output
 
 # Things to consider
 - Allow the UI to show prompts feeding into language model
