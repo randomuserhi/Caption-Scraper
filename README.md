@@ -38,6 +38,7 @@
 - Let users customise "recipe" => this can also be coded as well similar to "plugins"
     - A "recipe" is just the algorithm the program uses to create the summary
         - Allows users to use different summary generation algorithms
+        - E.g => opens browser and puts prompt into bing AI and then returns output
 
 # Things to consider
 - Allow the UI to show prompts feeding into language model
