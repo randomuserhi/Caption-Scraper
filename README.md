@@ -22,6 +22,7 @@
 - Auto updater
 
 # Possible Features
+- OpenGL in wpf => to do cool physics based stuff / animated things...
 - UI => Select time stamps in video to summarise
 - Pass multiple videos to language model as context => or summarise multiple
 - Chatbot (tad extra)
