@@ -1,5 +1,23 @@
 # Caption-Scraper
- 
+
+# New Notes
+- Fine tune GPT-3 (Cheaper than GPT4, less performant)
+- Unsure of effectiveness could be very good, raw GPT-3/3.5 proving difficult
+- Probably should just use GPT-4 if we can get API access
+- Very easy to switch, just change model name, add option
+
+- Use Whisper (OpenAI speech2text) as performance >> youtube auto gen
+- Need to scrape audio? (Should be possible, many bootleg yt2mp3 services already exist)
+- Can run locally, tiny requires about 1GB VRAM 
+- (likely similar performance to youtube auto maybe just scrape)
+- Medium requires only about 5GB VRAM <- best option for our pcs
+- Large is 10GB VRAM so not horrific but more than our GPUs
+- ^ https://github.com/openai/whisper (Open Source)
+
+- Whisper is python backend, can also be run via OpenAI API
+- https://platform.openai.com/docs/guides/speech-to-text
+- 25MB upload limit, can segment though so somewhat non issue
+
 # AIMS
 - WPF app (NOTE:: Code with foreshadowing of allowing webhosting for App to ALSO act as a server)
     - Coded in a way to support "plugins" => custom scrapers for getting video + transcript from other sites
