@@ -18,6 +18,9 @@
         - E.g Big transcript => get language model to summarise transcript => feed it back in with title
             - Experiment with iterative feeding...
 
+# MUST HAVE
+- Auto updater
+
 # Possible Features
 - UI => Select time stamps in video to summarise
 - Pass multiple videos to language model as context => or summarise multiple
