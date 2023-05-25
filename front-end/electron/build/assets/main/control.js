@@ -1,5 +1,3 @@
-import RHU from "../js3party/RHU/RHU.mjs";
-RHU();
 document.getElementById("close-btn").addEventListener("click", (e) => {
     window.api.closeWindow();
 });
