@@ -32,34 +32,56 @@ class Program {
         }
     }
     static onClose() {
-        // Dereference the window object. 
         Program.win = null;
     }
     static onReady() {
         Program.win = new electron_1.BrowserWindow({
             frame: false,
             show: false,
+            backgroundColor: "rgba(0, 0, 0, 0)",
             webPreferences: {
                 nodeIntegration: false,
                 contextIsolation: true,
-                preload: path.join(__dirname, "preload.cjs") // use a preload script
+                preload: path.join(__dirname, "preload.cjs")
             }
         });
         Program.win.on('closed', Program.onClose);
-        Program.win.loadFile(path.join(__dirname, "assets/main/main.html")); // load the main page
+        Program.win.loadFile(path.join(__dirname, "assets/main/main.html"));
         Program.win.maximize();
         Program.win.show();
     }
     static setupIPC() {
-        electron_1.ipcMain.on("closeWindow", () => {
+        electron_1.ipcMain.on("closeWindow", (e) => {
+            if (!Program.isTrustedFrame(e.senderFrame))
+                return;
+            if (Program.win === null)
+                return;
             Program.win.close();
         });
-        electron_1.ipcMain.on("maximizeWindow", () => {
+        electron_1.ipcMain.on("maximizeWindow", (e) => {
+            if (!Program.isTrustedFrame(e.senderFrame))
+                return;
+            if (Program.win === null)
+                return;
             Program.win.isMaximized() ? Program.win.unmaximize() : Program.win.maximize();
         });
-        electron_1.ipcMain.on("minimizeWindow", () => {
+        electron_1.ipcMain.on("minimizeWindow", (e) => {
+            if (!Program.isTrustedFrame(e.senderFrame))
+                return;
+            if (Program.win === null)
+                return;
             Program.win.minimize();
         });
+    }
+    static isTrustedFrame(frame) {
+        if (Program.win === null)
+            return false;
+        return frame === Program.win.webContents.mainFrame;
+    }
+    static log(message) {
+        if (Program.win === null)
+            return;
+        Program.win.webContents.executeJavaScript(`console.log("${message}");`);
     }
     static main(app) {
         Program.app = app;
