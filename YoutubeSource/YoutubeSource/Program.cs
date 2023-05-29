@@ -1,6 +1,7 @@
 ﻿using System.Net;
 using Raudy.Net;
 using System.Text;
+using Newtonsoft.Json;
 
 // Project > Properties > Change from Console Application to Windows Application when moving to production
 
@@ -9,6 +10,7 @@ namespace YoutubeSource
     internal class Program
     {
         static bool running = true;
+        static TCPServer server = new TCPServer(1024);
 
         static int Main(string[] args)
         {
@@ -34,7 +36,6 @@ namespace YoutubeSource
             }*/
 
             // Boot Server
-            TCPServer server = new TCPServer(1024);
             server.onReceive += OnReceive;
             server.onAccept += OnAccept;
             server.onDisconnect += OnDisconnect;
@@ -61,6 +62,8 @@ namespace YoutubeSource
                         await server.SendTo(ep, Net.SerializeMessage(heartBeat));
                     }
 
+                    // CODE THAT RUNS CONSTANTLY GOES HERE
+
                     Thread.Sleep(tickRate);
                 }
             });
@@ -77,7 +80,7 @@ namespace YoutubeSource
             Console.WriteLine($"Connected: {endPoint}");
         }
 
-        static void OnReceive(IPEndPoint endPoint, int received, byte[] buffer)
+        static async void OnReceive(IPEndPoint endPoint, int received, byte[] buffer)
         {
             try
             {
@@ -85,6 +88,13 @@ namespace YoutubeSource
                 string type = Net.MessageType(msg);
                 switch (type)
                 {
+                    case "example":
+                        Message<string> deserialize = JsonConvert.DeserializeObject<Message<string>>(msg);
+                        Message<string> response = Net.NewMessage<string>("exampleResponse", deserialize.header.local_id);
+                        response.result = "mp3 data";
+                        await server.SendTo(endPoint, Net.SerializeMessage(response));
+                        break;
+
                     default:
                         Console.WriteLine($"Received unknown message type: {type}");
                         break;
